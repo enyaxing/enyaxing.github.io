@@ -1,21 +1,68 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles/main.css">
-        <title>enya xing</title>
-    </head>
-    <body class="centered-wrapper">
-        <div class="centered-content">
-            <p>howdy! i'm enya xing.</p>
+<head>
+    <link rel="stylesheet" href="styles/main.css">
+    <title>enya xing</title>
+</head>
+<body class="centered-container">
+    <div class="main-container">
+        <div class="small-div-text">
+            <div class="text1">
+                <p>howdy! i'm enya xing.</p>
             <p>tldr about me. i am:</p>
             <ol>
-                <li>a current software development engineer🧑🏻‍💻 working on twitch ads 👾 at amazon.</li>
-                <li>a 2022 berkeley graduate in computer science. <i>go bears 🐻!</i></li>
-                <li>a previous intern for <a href="https://ring.com/products/car-cam">ring</a> at amazon lab126.</li>
+                <li class="trigger trigger-twitch" id="twitch">a current software development engineer 🧑🏻‍💻 working on twitch ads 👾 at amazon in nyc.</li>
+                <li class="trigger trigger-berkeley" id="berkeley">a 2022 berkeley graduate in computer science. go bears 🐻!</li>
+                <li class="trigger trigger-ring" id="ring">a previous intern for <a href="https://ring.com/products/car-cam">ring</a> at amazon lab126.</li>
                 <li>a user of they/them pronouns. thanks!</li>
-                <li>constantly in pursuit of making things better. some projects!</li>
+                <li>constantly in pursuit of making things better. here are: </li>
+                    <ol> - some software projects 💻 </ol>
+                    <ol class="trigger trigger-robotics" id="robotics"> - <a href="robotics.html">some robotics projects 🤖</a></ol>
                 <li>a lover of big words.</li>
             </ol>
-            <p>thanks for reading! my favorite emojis are 🤠✌️✨. sending you this sentiment through the interwebs. peace out!</p>
-        <div>
-    </body>
+            </div>
+        </div>
+        <div class="small-div-image">
+            <div class="image1">
+                <img src="resources/i-love-fall.jpg" alt="I really love fall" class="responsive-image" id="dynamic-image">
+            </div>
+            <p class="image-description" id="image-description">Fall 2021, speakers for the Wozniak Lounge celebration and hung out with our beloved mascot Oski.</p>
+        </div>
+    </div>
+    <p class="below-text">thanks for reading! my favorite emojis are 🤠✌️✨. sending you this sentiment through the interwebs. peace out!</p>
+
+    <script>
+        // Get references to the list items and the image element
+        const listItems = document.querySelectorAll('.trigger');
+        const dynamicImage = document.getElementById('dynamic-image');
+        const imageDescription = document.getElementById('image-description');
+
+        dynamicImage.src = 'resources/i-love-fall.jpg'; // Replace with the actual image path
+        imageDescription.textContent = 'Fall 2022, in a pumpkin patch. Fall is my favorite season 🍁.'; // Replace with the description text
+
+        // Add event listeners to each list item
+        listItems.forEach((item) => {
+            item.addEventListener('mouseover', () => {
+                // Check which item is hovered and set the image source accordingly
+                if (item.id === 'berkeley') {
+                    dynamicImage.src = 'resources/oski.png'; // Replace with the actual image path
+                    imageDescription.textContent = 'Fall 2021, speakers for the Wozniak Lounge celebration and hung out with our beloved Oski'; // Replace with the description text
+                } else if (item.id === 'robotics') {
+                    dynamicImage.src = 'resources/robotics.png'; // Replace with the actual image path
+                    imageDescription.textContent = 'Spring 2022, figure from drone obstacle avoidance project'; // Replace with the description text
+                } else if (item.id === 'ring') {
+                    dynamicImage.src = 'resources/ring-car-cam.jpg'; // Replace with the actual image path
+                    imageDescription.textContent = 'Summer 2021, worked on the Ring Car Cam!'; // Replace with the description text
+                } else if (item.id === 'twitch') {
+                    dynamicImage.src = 'resources/twitch.jpeg'; // Replace with the actual image path
+                    imageDescription.textContent = 'Currently: working on Twitch advertising help generate revenue for creators! 💰'; // Replace with the description text
+                }
+            });
+        });
+
+        // Set a default image when no item is hovered
+        dynamicImage.src = 'resources/i-love-fall.jpg'; // Replace with the actual default image path
+    </script>
+
+</body>
 </html>
