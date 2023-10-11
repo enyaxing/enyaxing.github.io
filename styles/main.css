@@ -9,6 +9,26 @@ body {
     .content {
         max-width: 80%;
     }
+    #image-gallery {
+        flex-wrap: wrap;
+        /* Allow images to wrap to the next line on small screens */
+    }
+
+    .gallery-image {
+        width: 30%;
+        /* Adjust image size for small screens */
+        height: auto;
+        /* Let the height adjust proportionally */
+        margin-right: 5px;
+        /* Reduce spacing between images on small screens */
+        margin-bottom: 10px;
+        /* Add spacing below each row on small screens */
+    }
+}
+
+body {
+    background-color: #f2f2f2;
+    /* Replace with your desired background color */
 }
 
 .responsive-image {
@@ -44,6 +64,13 @@ body {
     align-items: center; /* Centers the small divs vertically */
     padding: 20px;
     max-width: 60%;
+}
+
+.project-container {
+    background-color: #fff;
+    /* Background color for your project content, adjust as needed */
+    padding: 80px;
+    max-width: 70%;
 }
 
 .small-div-text {
@@ -98,4 +125,20 @@ a {
 a:hover {
     color: #004e8c; /* Text color for links on hover */
     text-decoration: underline; /* Add underline on hover if desired */
+}
+
+/* Add this style to arrange images horizontally */
+#image-gallery {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Style for the individual images */
+.gallery-image {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    object-fit: cover;
+    /* Maintain aspect ratio and cover the container */
 }

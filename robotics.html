@@ -8,7 +8,33 @@
 </head>
 <body>
     <div class="centered-container">
-        <div class="content">
+        <div class="project-container">
+            <a href="index.html">⬅ Return home</a>
+            <section id="project0" class="project">
+                <h2>Robotic Guide Dog: Multi-level Floor Navigation 🦮</h2>
+                <div class="media">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xNJRCKH5hZI?si=x9Q9N_VYOTrgQdxG"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <p>For the visually-impaired, an elevator is not always easily accessible. Braille markings are mandatory for most modern
+                elevator control systems; however, not everyone knows how to read Braille. Unable to clearly read the current floor
+                number, those who are visually-impaired or blind could mentally count the "dings" for each floor or ask someone for the
+                current floor number. A normal guide dog could prove useful in leading a person into an elevator, but is inevitably
+                unable to read, press the correct floor number, and know the correct floor to exit on (assuming a lack of prior
+                experience to the building).
+                As such, this is the motivation behind our project. By programming a robotic guide dog to lead someone to an elevator,
+                press the correct floor button, and lead them out on the correct floor, we seek to alleviate the stress and uncertainty
+                a visually-impaired person might face in calling an elevator
+                
+                This project builds  upon the previous work of the Hybrid Robotics Lab at U.C. Berkeley and creates a framework for multi-floor navigation on the A1 Unitree Robot Dog.</p>
+
+                <p>In this project, I worked on the low-level motion controller and local planner for obstacle avoidance. This was my first time working within legged robotics--had a lot of fun here.</p>
+
+                <p>Looking for more details? <a href="https://sites.google.com/berkeley.edu/robotguidedog-multifloornav/home?authuser=0">Check them out here.</a></p>
+            </section>
+
             <section id="project1" class="project">
                 <h2>Trajectory Tracking with Baxter</h2>
                 <div class="media">
@@ -19,6 +45,12 @@
 
             <section id="project2" class="project">
                 <h2>Nonholonomic Control</h2>
+                <div class="media">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ASLxmAAkqGM?si=cZ8PHgD3e6SOtq9w"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
                 <p> Can I parallel park? Not really. How well can a robot accomplish one? Let's see. <br>
                     
                     In this project, we implement and compare three different methods and modalities of planning algorithm in order to compare their results on a number of simulated and real-world tasks. 
@@ -29,29 +61,86 @@
     
                       <em>Note: Middle graph demonstrates RRT--planned path is in green, and the alternate paths explored by the algorithm are in yellow. <br></em>
                
-                <p class="figure-description">A visualization of the simple maneuver task</p>
                 <div class="media">
                     <img src="resources/simple-maneuver.png" alt="Plot comparison of three different techniques performing a simple maneuver" class="responsive-image">
                 </div>
+                <p class="figure-description">A visualization of the simple maneuver task</p>
                 <hr class="section-divider"> <!-- Horizontal line between sections -->
-                <p class="figure-description">A visualization of the lateral (parallel park) task</p>
                 <div class="media">
                     <img src="resources/parallel-park.png" alt="Project 1 Image" class="responsive-image">
                 </div>
+                <p class="figure-description">A visualization of the lateral (parallel park) task</p>
                 <hr class="section-divider"> <!-- Horizontal line between sections -->
-                <p class="figure-description">A visualization of the three-point-turn task</p>
                 <div class="media">
                     <img src="resources/three-point-turn.png" alt="Project 1 Image" class="responsive-image">
                 </div>
+                <p class="figure-description">A visualization of the three-point-turn task</p>
             </section>
             <section id="project3" class="project">
-                <h2>Grasping Planning with Baxter</h2>
+                <h2>Grasping Estimation and Planning with Baxter</h2>
                 <p></p>
                 <div class="media">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_jXfn91614?si=e5SATeqhhK58O4M-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <p>Grasping is something </p>
+                <p>Grasping is something that we humans with opposable thumbs find quite naturally. How can a robot with a "U" shape gripper attempt this though?
+
+                    In this project, we explored different ways for planning, analyzing, and executing generalized grasps on a variety of objects, using a variety of pose estimation and evaluation techniques. Grasps here were generated by sampling N=1000 vertices, then sampled for 500 random pairs as canddiate grasps. They were then scored with a selected metric (we try robust force closure, ravity resistance, and Ferrari Canny) and normalized, and the top 5 were executed.  
+    
+                </p>
+                <section id="image-gallery">
+                    <img src="resources/grasps/fc1.png" alt="Image 1" class="gallery-image">
+                    <img src="resources/grasps/fc2.png" alt="Image 2" class="gallery-image">
+                    <img src="resources/grasps/fc3.png" alt="Image 3" class="gallery-image">
+                    <img src="resources/grasps/fc4.png" alt="Image 4" class="gallery-image">
+                    <img src="resources/grasps/fc5.png" alt="Image 5" class="gallery-image">
+                </section>
+                <p class="figure-description">Selected pawn grasps with the Ferrari Canni metric.</em>
+                <hr class="section-divider"> <!-- Horizontal line between sections -->
+                <section id="image-gallery">
+                    <img src="resources/grasps/gr1.png" alt="Image 1" class="gallery-image">
+                    <img src="resources/grasps/gr2.png" alt="Image 2" class="gallery-image">
+                    <img src="resources/grasps/gr3.png" alt="Image 3" class="gallery-image">
+                    <img src="resources/grasps/gr4.png" alt="Image 4" class="gallery-image">
+                    <img src="resources/grasps/gr5.png" alt="Image 5" class="gallery-image">
+                </section>
+                <p class="figure-description">Selected pawn grasps with the gravity resistance metric.</em>
+                <hr class="section-divider"> <!-- Horizontal line between sections -->
+                <section id="image-gallery">
+                    <img src="resources/grasps/robust_fc_0.png" alt="Image 1" class="gallery-image">
+                    <img src="resources/grasps/robust_fc_2.png" alt="Image 2" class="gallery-image">
+                    <img src="resources/grasps/robust_fc_3.png" alt="Image 3" class="gallery-image">
+                    <img src="resources/grasps/robust_fc_4.png" alt="Image 4" class="gallery-image">
+                    <img src="resources/grasps/robust_fc_5.png" alt="Image 5" class="gallery-image">
+                </section>
+                <p class="figure-description">Selected pawn grasps with the robust force closure metric.</em>
+                    <hr class="section-divider"> <!-- Horizontal line between sections -->
             </section>
+            <p>Hey, welcome! Here are some robotics projects I've tinkered with. Most of these were done with teammates in
+                conjunction with Berkeley's <a href="https://www2.eecs.berkeley.edu/Courses/EEC106A/">EE106A</a> and <a
+                    href="https://www2.eecs.berkeley.edu/Courses/EEC106B/">EE106B</a> classes under Prof. Shankar Sastry, Prof. Yi
+                Ma, and Prof. Khoushil Sreenath.</p>
+            <section id="project1" class="project">
+                <h2>Dynamic Obstacle Avoidance for Drones</h2>
+                <div class="media">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Q7SKCKcSF6Q?si=BFX88paAz87HfaLI"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <p>The problem of object avoidance has not been tackled extensively on drones, despite many applications to wheeled
+                    robots
+                    like cars. In this project, we intend to reach the goal of dynamic object avoidance of drones by integrating
+                    computer
+                    vision algorithms (YOLO), object trajectory generation and estimation (probability distribution in 3D space),
+                    and path
+                    planning of drones. Without the use of advanced and expensive industrial cameras or motion tracking systems, our
+                    implementation with only an on-board drone camera has been proved effective in four different trial
+                    trajectories.</p>
+            
+                <p>In this project, I worked on setting up simulations in Gazebo and running experiments.</p>
+                <a href="106B"></a>
+            </section>
+            <a href="index.html">⬅ Return home</a>
         </div>
     </div>
 </body>
